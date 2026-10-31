@@ -1,0 +1,83 @@
+{
+  "source_file": "next_bill_amount_prediction_synthetic_dataset (1).csv",
+  "forecast_horizon": "One month ahead after current-month billing is finalized",
+  "split_basis": "Forecast month, using labels verified against the following recorded bill",
+  "train_target_end": "2024-11-01",
+  "validation_target_end": "2025-02-01",
+  "test_target_end": "2025-05-01",
+  "rows": {
+    "train": 10000,
+    "validation": 3000,
+    "test": 3000,
+    "latest_demo": 1000
+  },
+  "raw_features": [
+    "plan_type",
+    "data_usage_gb",
+    "voice_calls",
+    "sms_count",
+    "addon_data_gb",
+    "plan_fee",
+    "discount_amount",
+    "data_charge",
+    "voice_charge",
+    "addon_charge",
+    "tax_amount",
+    "bill_amount",
+    "bill_lag_1",
+    "bill_lag_2",
+    "bill_mean_3",
+    "bill_std_3",
+    "bill_change_1",
+    "usage_mean_3",
+    "usage_change_1",
+    "history_months",
+    "extra_charges",
+    "forecast_month_sin",
+    "forecast_month_cos"
+  ],
+  "encoded_features": [
+    "data_usage_gb",
+    "voice_calls",
+    "sms_count",
+    "addon_data_gb",
+    "plan_fee",
+    "discount_amount",
+    "data_charge",
+    "voice_charge",
+    "addon_charge",
+    "tax_amount",
+    "bill_amount",
+    "bill_lag_1",
+    "bill_lag_2",
+    "bill_mean_3",
+    "bill_std_3",
+    "bill_change_1",
+    "usage_mean_3",
+    "usage_change_1",
+    "history_months",
+    "extra_charges",
+    "forecast_month_sin",
+    "forecast_month_cos",
+    "plan_type_Basic",
+    "plan_type_Premium",
+    "plan_type_Standard"
+  ],
+  "history_rule": "Customer-specific backward-looking history; current completed month included",
+  "evaluation_rule": "Rolling one-month forecasts; earlier realized bills may update history; preprocessing stays fixed",
+  "label_check": {
+    "verified_rows": 16000,
+    "unverified_rows": 1000
+  },
+  "limitations": [
+    "Synthetic data; generation process and currency not supplied",
+    "Insufficient history to establish annual seasonality",
+    "Latest supplied target labels excluded from evaluation because they cannot be cross-checked",
+    "No forecast accuracy, prediction drivers, uncertainty or high-bill detection evaluated in Step 1"
+  ],
+  "versions": {
+    "pandas": "2.3.3",
+    "numpy": "2.3.5",
+    "scikit_learn": "1.7.2"
+  }
+}
