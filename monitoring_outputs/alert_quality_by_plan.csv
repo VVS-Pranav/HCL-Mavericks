@@ -1,0 +1,7 @@
+plan_type,rule,rows,flagged_rows,actual_high_rows,true_positive,false_positive,false_negative,true_negative,precision_percent,recall_percent,F1,review_workload_percent
+Basic,high_bill_alert,822,9,124,5,4,119,694,55.55555555555556,4.032258064516129,0.07518796992481203,1.094890510948905
+Basic,possible_high_bill,822,472,124,110,362,14,336,23.305084745762713,88.70967741935483,0.3691275167785235,57.420924574209245
+Premium,high_bill_alert,350,0,2,0,0,2,348,,0.0,0.0,0.0
+Premium,possible_high_bill,350,343,2,2,341,0,7,0.5830903790087464,100.0,0.011594202898550725,98.0
+Standard,high_bill_alert,828,0,48,0,0,48,780,,0.0,0.0,0.0
+Standard,possible_high_bill,828,679,48,45,634,3,146,6.62739322533137,93.75,0.12379642365887207,82.0048309178744

@@ -1,0 +1,68 @@
+{
+  "model": "HistGradientBoosting 250",
+  "settings": {
+    "nominal_coverage": 0.9,
+    "relative_allowance": 0.2705358443525638,
+    "scale_floor": 1.0,
+    "relative_increase": 0.2,
+    "minimum_increase": 50.0,
+    "volatility_multiplier": 2.0,
+    "minimum_history": 3
+  },
+  "calibration_month": "2025-03-01",
+  "calibration_rows": 1000,
+  "evaluation_start": "2025-04-01",
+  "evaluation_end": "2025-05-01",
+  "interval_evaluation": {
+    "rows": 2000,
+    "coverage_percent": 88.35,
+    "mean_interval_width": 285.4285720483281,
+    "MAE": 51.16155354598262
+  },
+  "alert_evaluation": [
+    {
+      "rule": "Point-prediction alert",
+      "rows": 2000,
+      "flagged_rows": 9,
+      "actual_high_rows": 174,
+      "true_positive": 5,
+      "false_positive": 4,
+      "false_negative": 169,
+      "true_negative": 1822,
+      "precision_percent": 55.55555555555556,
+      "recall_percent": 2.8735632183908044,
+      "F1": 0.0546448087431694,
+      "review_workload_percent": 0.45
+    },
+    {
+      "rule": "Upper-range watchlist",
+      "rows": 2000,
+      "flagged_rows": 1494,
+      "actual_high_rows": 174,
+      "true_positive": 157,
+      "false_positive": 1337,
+      "false_negative": 17,
+      "true_negative": 489,
+      "precision_percent": 10.508701472556893,
+      "recall_percent": 90.22988505747126,
+      "F1": 0.1882494004796163,
+      "review_workload_percent": 74.7
+    }
+  ],
+  "latest_forecast_month": "2025-06-01",
+  "latest_priority_counts": {
+    "Possible high bill": 707,
+    "Within range": 290,
+    "High-bill alert": 3
+  },
+  "explanation_method": "Ordered grouped replacements from same-plan pre-test reference records",
+  "limitations": [
+    "Synthetic data; future performance and currency are not established.",
+    "Nominal coverage is empirical; repeated customers and drift limit formal coverage claims.",
+    "March-May had prior point evaluation in Step 2; this is an additional historical check.",
+    "Three-bill history is a short baseline; alert thresholds are illustrative policy choices.",
+    "Point forecasts may miss sudden spikes; report recall and watchlist workload.",
+    "Customer contributions depend on group order and reference and are not causal tariff effects.",
+    "Latest forecasts are unscored because independently verified next bills are unavailable."
+  ]
+}
